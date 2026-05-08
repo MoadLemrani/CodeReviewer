@@ -1,0 +1,8 @@
+com/codereviewer/backend/service/ReviewService.class
+com/codereviewer/backend/controller/ReviewController.class
+com/codereviewer/backend/model/Review.class
+com/codereviewer/backend/repository/ReviewRepository.class
+com/codereviewer/backend/service/GitHubService.class
+com/codereviewer/backend/BackendApplication.class
+com/codereviewer/backend/service/PythonClientService.class
+com/codereviewer/backend/controller/ReviewRequest.class

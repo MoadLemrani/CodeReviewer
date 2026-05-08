@@ -12,15 +12,16 @@ load_dotenv()
 
 #initialize the client with api key and base url (api endpoint)
 client = OpenAI(
-    api_key = os.getenv(DEEPSEEK_API_kEY),
-    base_url = "https://api.deepseek.com"
+    api_key = os.getenv("GROQ_API_KEY"),
+    base_url = "https://api.groq.com/openai/v1"
 )
 
 def get_review(prompt: str) -> dict:
+    raw = None
     try:
         #the API request
         response = client.chat.completions.create(
-            model = "deepseek-chat",
+            model = "llama-3.3-70b-versatile",
             messages = [
                 {
                     "role" : "system",
@@ -31,7 +32,7 @@ def get_review(prompt: str) -> dict:
                     )
                 },
                 {
-                    "role" : "client",
+                    "role" : "user", #not client
                     "content" : prompt
                 }
             ],
@@ -39,7 +40,7 @@ def get_review(prompt: str) -> dict:
         )
 
         #parse the output : deserialize JSON string
-        raw = response.choice[0].message.content
+        raw = response.choices[0].message.content
         return json.loads(raw)
     except json.JSONDecodeError :
         logger.error("JSONDecodeError -> raw : %s", raw)

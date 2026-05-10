@@ -10,7 +10,7 @@ import java.util.Map;
 @Service
 public class PythonClientService {
 
-    @Value("${ai.sevice.url}")
+    @Value("${ai.service.url}")
     private String aiServiceUrl;
 
     private final RestTemplate restTemplate = new RestTemplate();

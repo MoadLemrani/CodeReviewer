@@ -26,7 +26,7 @@ public class ReviewService {
 
         //persist to postgreSQL
         Review review = new Review();
-        review.setPrURL(prUrl);
+        review.setPrUrl(prUrl);
         review.setLanguage(language);
         review.setDiff(diff);
         review.setResult(result);

@@ -18,7 +18,7 @@ public class Review {
     private UUID id;
 
     @Column(name = "pr_url")
-    private String prURL;
+    private String prUrl;
 
     private String language;
 

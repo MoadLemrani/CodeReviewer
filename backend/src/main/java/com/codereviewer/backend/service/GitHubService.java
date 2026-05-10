@@ -34,7 +34,7 @@ public class GitHubService {
         String apiUrl = convertToApiUrl(prUrl) + "/files";
 
         HttpHeaders headers = new HttpHeaders();
-        headers.set("Accept", "applications/vnd.github.v3+json");
+        headers.set("Accept", "application/vnd.github.v3+json");
 
         HttpEntity<Void> request = new HttpEntity<>(headers);
 

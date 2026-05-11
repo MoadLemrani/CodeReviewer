@@ -7,7 +7,7 @@ import { submitReview } from "./api";
 const mono = { fontFamily: "'Berkeley Mono', 'Fira Code', monospace" };
 const sans = { fontFamily: "'DM Sans', system-ui, sans-serif" };
 
-const Loading_STEPS = ["fetching diff", "detecting language", "running analysis", "building report"];
+const LOADING_STEPS = ["fetching diff", "detecting language", "running analysis", "building report"];
 
 function parseDiff(rawDiff) {
   if (!rawDiff) return [];
@@ -41,7 +41,7 @@ export default function App() {
 
     let step = 0;
     const iv = setInterval(() => {
-      if (step < Loading_STEPS.length - 1) { step++; setLoadingStep(step); }
+      if (step < LOADING_STEPS.length - 1) { step++; setLoadingStep(step); }
     }, 800);
 
     try {
@@ -153,7 +153,7 @@ export default function App() {
         )}
 
         {/* Loading */}
-        {loding && (
+        {loading && (
           <div style={{ textAlign: "center", padding: "48px 0"}}>
             <div style={{
               width: 36, height: 36, borderRadius: "50%",
